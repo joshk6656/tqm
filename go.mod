@@ -5,7 +5,7 @@ go 1.25.0
 require (
 	github.com/autobrr/autobrr v1.77.0
 	github.com/autobrr/go-deluge v1.4.0
-	github.com/autobrr/go-qbittorrent v1.15.1-0.20260511191126-a6c6b419cb33
+	github.com/autobrr/go-qbittorrent v1.15.1-0.20260513090446-958722ab43aa
 	github.com/bobesa/go-domain-util v0.0.0-20190911083921-4033b5f7dd89
 	github.com/charlievieth/fastwalk v1.0.12
 	github.com/creativeprojects/go-selfupdate v1.5.0

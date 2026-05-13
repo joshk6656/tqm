@@ -24,8 +24,6 @@ github.com/autobrr/autobrr v1.77.0 h1:0SNa9g2mk5Qe92vHOt0eJJz7VHB515R/BZyy1fCzik
 github.com/autobrr/autobrr v1.77.0/go.mod h1:GstQT2UumxQE54ECtjl5jwdzenaGFzvWxVNEVoLWH4E=
 github.com/autobrr/go-deluge v1.4.0 h1:IW3mX90YQjJri304/br3JT18WZmjiwP8AaXlVaGj3DM=
 github.com/autobrr/go-deluge v1.4.0/go.mod h1:ndiXT1eHWv/ATNk9TpE8GHIs8OSSUnsImt4Syk+y5LM=
-github.com/autobrr/go-qbittorrent v1.15.1-0.20260511191126-a6c6b419cb33 h1:wz7pXgfH6ax2PSJJ5RmRepwAYulXeCPWFJUdNoQ8SXM=
-github.com/autobrr/go-qbittorrent v1.15.1-0.20260511191126-a6c6b419cb33/go.mod h1:W/24JQyQI+u5KntK1qzkBC/7amOTBPpV+q5e3C+kCkY=
 github.com/avast/retry-go v3.0.0+incompatible h1:4SOWQ7Qs+oroOTQOYnAHqelpCO0biHSxpiH9JdtuBj0=
 github.com/avast/retry-go v3.0.0+incompatible/go.mod h1:XtSnn+n/sHqQIpZ10K1qAevBhOOCWBLXXy3hyiqqBrY=
 github.com/aws/aws-sdk-go-v2 v1.9.2/go.mod h1:cK/D0BBs0b/oWPIcX/Z/obahJK1TT7IPVjy53i/mX/4=
