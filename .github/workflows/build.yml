@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - "master"
+      - "main"
     tags:
       - 'v*'
     paths-ignore:
@@ -21,6 +22,7 @@ on:
       - 'docker-compose.yml'
       - 'Makefile'
       - '**.md'
+  workflow_dispatch:
 
 env:
   REGISTRY: ghcr.io

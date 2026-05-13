@@ -1,0 +1,56 @@
+name: Tidy & Verify
+
+# Manually-triggered helper: runs `go mod tidy`, builds, and runs the qBittorrent
+# client tests, then commits any go.mod / go.sum changes back to the triggering
+# branch. Useful when you need to update dependencies without a local Go install.
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+env:
+  GO_VERSION: '1.24'
+
+jobs:
+  tidy:
+    name: Tidy and verify
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          ref: ${{ github.ref }}
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: ${{ env.GO_VERSION }}
+          cache: true
+
+      - name: go mod tidy
+        run: go mod tidy
+
+      - name: go build
+        run: go build ./...
+
+      - name: go test (qBittorrent client)
+        run: go test ./pkg/client/...
+
+      - name: Show resulting go.mod / go.sum diff
+        run: git --no-pager diff -- go.mod go.sum || true
+
+      - name: Commit tidied go.mod / go.sum
+        run: |
+          if git diff --quiet -- go.mod go.sum; then
+            echo "No changes to go.mod or go.sum."
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add go.mod go.sum
+          git commit -m "chore: go mod tidy"
+          git push origin HEAD:${GITHUB_REF#refs/heads/}
